@@ -7,23 +7,20 @@ import Table from './Table';
 class App extends Component {
     constructor(props){
         super(props);
-        console.log("Parent props",this.props.testStore);
+        console.log("App",this.props.testStore);
     }
-    componentDidMount(){
+
+    componentWillMount(){
         getDataAction.getUserInfo();
     }
     
   render() {
-      console.log(this.props.testStore);
     return (
       <div className="container">
         <div className="row">
           <div className="col-sm-12 text-center">
             <p>Table Sort</p>
-              {
-                  this.props.testStore.data === 0 ? <div>Loading</div> : <Table data={this.props.testStore} />
-              }
-
+              <Table data={this.props.testStore} />
           </div>
         </div>
       </div>

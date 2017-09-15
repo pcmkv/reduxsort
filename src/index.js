@@ -12,7 +12,7 @@ import * as appActions from './actions/getData';
 
 
 export let store = createStore(sortApp);
-appActions.getUserInfo();
+
 
 ReactDOM.render(
     <Provider store={store}>
