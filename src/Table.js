@@ -1,21 +1,28 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import * as sortName from './actions/sortByName';
 
 class Table extends Component {
   constructor(props) {
       super(props);
       console.log("CHILDREN", this.props.data);
   }
-
+    sortNameMethod(){
+        sortName.sortByName();
+    }
   render() {
     return (
       <div className="row">
         <div className="col-sm-12">
             <table className="table table-bordered">
-            <thead>
+            <thead style={{textAlign:'center'}}>
             <tr>
             <th>#</th>
-            <th>name</th>
+            <th>name
+                <button onClick={this.sortNameMethod.bind(this)}>
+                Sort
+            </button>
+            </th>
             <th>E-mail</th>
             <th>Location</th>
             </tr>
@@ -28,7 +35,7 @@ class Table extends Component {
                                 <td>{elem.id} </td>
                                 <td>{elem.email} </td>
                                 <td>{elem.name} </td>
-                                <td></td>
+                                <td>{elem.address.city}</td>
                             </tr>
                         )
                     }

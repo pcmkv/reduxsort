@@ -19,7 +19,7 @@ class App extends Component {
         <div className="row">
           <div className="col-sm-12 text-center">
             <p>Table Sort</p>
-              <Table data={this.props.testStore} />
+              <Table data={this.props.testStore}  />
           </div>
         </div>
       </div>
