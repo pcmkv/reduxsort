@@ -1,4 +1,3 @@
-import * as test  from "../actions/getData";
 
 const listTaskInit = [];
 

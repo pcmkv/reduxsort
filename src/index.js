@@ -6,13 +6,10 @@ import registerServiceWorker from './registerServiceWorker';
 
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
-
 import sortApp from './reducers/appReducer';
-import * as appActions from './actions/getData'; 
 
 
 export let store = createStore(sortApp);
-
 
 ReactDOM.render(
     <Provider store={store}>

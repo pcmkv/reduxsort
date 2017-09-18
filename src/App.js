@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import * as getDataAction from './actions/getData';
 import Table from './Table';
 
-
 class App extends Component {
     constructor(props){
         super(props);
