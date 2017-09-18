@@ -7,12 +7,26 @@ export default function sortApp(state = listTaskInit, action){
         state.push(action.payload);
         return action.payload;
     }
-    else if(action.type === 'SORT_BY_NAME'){
-        console.log( action.payload);
-        action.payload.sort((a,b) =>{
-            return a.name > b.name
+    else if(action.type === 'SORT_BY_NAME') {
+        console.log("payload",action.payload);
+        state.sort((a, b) => {
+            return action.payload ? a.name < b.name : a.name > b.name;
         });
-        return state;
+        return [...state];
+        /*if(action.payload === true){
+            state.sort((a, b) => {
+                return a.name > b.name;
+
+            });
+            return [...state];
+        }
+        else{
+            state.sort((a, b) => {
+                return a.name < b.name;
+
+            });
+            return [...state];
+        }*/
 
     }
     return state;
